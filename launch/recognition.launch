@@ -1,0 +1,4 @@
+<launch>
+    <node name="pointnet_ros" pkg="pointnet_ros" type="pointnetServer.py"
+          output="screen"/>
+</launch>
