@@ -1,4 +1,4 @@
 <launch>
-    <node name="pointnet_ros" pkg="pointnet_ros" type="pointnetServer.py"
+    <node ns="/excavator/lidar_perception" name="pointnet_server" pkg="pointnet_ros" type="pointnetServer.py"
           output="screen"/>
 </launch>

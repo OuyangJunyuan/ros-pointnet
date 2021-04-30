@@ -7,7 +7,7 @@ sys.path.append(RosPack().get_path('pointnet_ros'))
 import ROSbridge
 
 if __name__ == '__main__':
-    classifier = ROSbridge.PointNetServer("PointNetAction")
+    classifier = ROSbridge.PointNetServer("pointnet_action")
 
     # avoid use_sim_time = true and the time-sequence confused
     rate = rospy.Rate(10)

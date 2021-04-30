@@ -1,0 +1,10 @@
+uint32 seq
+sensor_msgs/PointCloud2[] clouds
+---
+#result definition
+uint32 seq
+int32[] labels
+float32[] prob
+---
+#feedback
+int32[] feedback_vector

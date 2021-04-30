@@ -11,7 +11,7 @@ from sensor_msgs.point_cloud2 import read_points_list
 from visualization_msgs.msg import Marker as mk
 # about ros-ActionServer
 import actionlib
-import cloud_utils.msg
+import pointnet_ros.msg
 
 # about pytorch
 import torch
@@ -127,14 +127,13 @@ class PointNetServer:
 
         # for ROS
         rospy.init_node(self._action_name + 'Server')
-        self._server = actionlib.SimpleActionServer(self._action_name, cloud_utils.msg.pointnetAction,
+        self._server = actionlib.SimpleActionServer(self._action_name, pointnet_ros.msg.pointnetAction,
                                                     execute_cb=self.execute_callback, auto_start=False)
-        self._result = cloud_utils.msg.pointnetResult()
+        self._result = pointnet_ros.msg.pointnetResult()
         self._server.start()
 
     def reset_server(self):
-        rospy.init_node(self._action_name + 'Server')
-        self._server = actionlib.SimpleActionServer(self._action_name, cloud_utils.msg.pointnetAction,
+        self._server = actionlib.SimpleActionServer(self._action_name, pointnet_ros.msg.pointnetAction,
                                                     execute_cb=self.execute_callback, auto_start=False)
         self._server.start()
         pass
